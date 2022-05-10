@@ -145,4 +145,6 @@ class TestUserAuth:
         # ЕСЛИ МЫ ПРОХОДИМ АВТОРИЗАЦИЮ, ТО НАМ ВОЗВРАЩАЕТСЯ ОШИБКА, ЕСЛИ НЕ ПРОХОДИМ ТО ТЕСТ ПРОХОДИТ
         assert user_id_after_check == 0, f"Мы прошли авторизацию, несмотря на то что был введен только {condition}"
 
+        # python3 -pytest -s test_name.py ЗАПУС ИЗ LINUX
+
 
