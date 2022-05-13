@@ -17,7 +17,7 @@ class TestUserGet(BaseCase):
         # Assertions.assert_json_has_no_key(response1, "LastName")
         # ВЫЗЫВАЯ ДАННУЮ ПРОВЕРКУ МЫ УБЕЖДАЕМСЯ, ЧТО В ОТВЕТЕ НЕТУ ВВЕДЕННЫХ ЗНАЧЕНИЙ, ЕСЛИ ОНИ ЕСТЬ, ПОЯВЛЯЕТСЯ ОШИБКА
         # замени проверку через 1 ключ, проверкой через список
-        keys_that_not_view_in_response_1 = ["email", "firstName", "lastName", "username"]
+        keys_that_not_view_in_response_1 = ["email", "firstName", "lastName"]
         Assertions.assert_json_has_no_any_keys(response1,
         keys_that_not_view_in_response_1) #проверяет, что нет ключа, которого не должно быть в JSON
 

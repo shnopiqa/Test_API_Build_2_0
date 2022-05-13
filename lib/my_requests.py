@@ -2,6 +2,10 @@
 # """В НЕМ МЫ СОЗДАДИМ КЛАСС MyRequests""
 import requests
 import allure
+
+from lib.loger import Logger
+
+
 class MyRequests:
     # """МЕТОД НАЧИНАЕТСЯ С НИЖНЕГО ПОДЧЕРКИВАНЬЯ И ЯВЛЯЕТСЯ ПРИВАТНЫМ В НЕГО ПЕРЕДАЕМ
     # все то что мы передаем в запросе
@@ -49,6 +53,9 @@ class MyRequests:
         if cookies is None:
             cookies = {}
 
+        # """ПОСЛЕ ИФОВ ПИШЕМ ДЛЯ ЛОГГЕРА ДАННЫЕ"""
+        # """ЛОГГЕР ПОЛУЧАЕТ ИНФОРМАЦЮ ОТ ПОЛЬЗОВВАТЕЛЯ, какой запрос он делает"""
+        Logger.add_request(url, data, headers, cookies, method)
         # """
         # # ДАЛЕЕ НАПИШЕМ КОД ДЛЯ ВЫБОРА МЕТОДА КОТОРЫМ БУДЕТ ЗАПУЩЕН ТЕСТ
         # ЭТИМ МЕТОДЫ ЯВЛЯЮТСЯ ПРИВАТНЫМИ ПОЭТОМУ ИХ НУЖНА ПЕРЕДАТЬ В STAICKMETHODS
@@ -71,6 +78,10 @@ class MyRequests:
 
         else:
             raise Exception(f"Bad HTTP method '{method}' was recived")
+
+        # """ЗДЕСЬ ЛОГГЕР ПОЛУЧАЕТ ЗАПРОС КОТОРЫЙ ПОЛЬЗОВАТЕЛЬ ДЕЛАЕТ"""
+
+        Logger.add_response(response)
 
         return response
 

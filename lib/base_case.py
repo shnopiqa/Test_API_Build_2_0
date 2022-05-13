@@ -1,6 +1,7 @@
 import json.decoder
 from datetime import datetime
 
+
 import requests
 
 # """ВНАЧАЕ ЗАПИШЕМ В КЛАСС МЕТОДЫ ДЛЯ ПОЛУЧЕНИЯ ЗНАЧЕНИЙ КУКИ И ХЭДЭР ИЗ ОТВЕТА СЕРВЕРА ПО ИМЕНИ
@@ -9,6 +10,8 @@ import requests
 # ТЕСТ  БУДЕТ ПАДАТЬ, ЕСЛИ ОНИ ЕСТЬ БУДЕТ ИХ ВОЗВРАЩАТЬ
 # """
 from requests import Response
+
+from lib.loger import Logger
 
 
 class BaseCase:
